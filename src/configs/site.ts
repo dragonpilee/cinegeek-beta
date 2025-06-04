@@ -38,18 +38,7 @@ export const siteConfig = {
     github: 'https://github.com/dragonpilee/cinegeek-beta',
     githubAccount: '',
   },
-  socialLinks: [
-    {
-      title: 'Twitter',
-      href: `${env.NEXT_PUBLIC_TWITTER}`,
-      icon: Icons.twitter,
-    },
-    {
-      title: 'Youtube',
-      href: `${env.NEXT_PUBLIC_YOUTUBE}`,
-      icon: Icons.youtube,
-    },
-  ],
+  socialLinks: [],
   footerItems: [
     //{ title: 'Audio Description', href: '/' },
     //{ title: 'Help Center', href: '/' },
