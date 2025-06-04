@@ -40,16 +40,6 @@ export const siteConfig = {
   },
   socialLinks: [
     {
-      title: 'Facebook',
-      href: `${env.NEXT_PUBLIC_FACEBOOK}`,
-      icon: Icons.facebook,
-    },
-    {
-      title: 'Instagram',
-      href: `${env.NEXT_PUBLIC_INSTAGRAM}`,
-      icon: Icons.instagram,
-    },
-    {
       title: 'Twitter',
       href: `${env.NEXT_PUBLIC_TWITTER}`,
       icon: Icons.twitter,
