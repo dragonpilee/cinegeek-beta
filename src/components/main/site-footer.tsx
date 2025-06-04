@@ -52,15 +52,6 @@ const SiteFooter = () => {
         <p className="text-center text-xs leading-loose sm:text-sm md:text-left">
             CineGeek does not host any files, it only links to 3rd party services. Legal issues should be taken up with the file hosts and providers. CineGeek is not responsible for any media files shown by the video providers.
           <a
-            href={siteConfig.links.twitter}
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            
-          </a>
-          
-          <a
             href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
