@@ -1,96 +1,98 @@
 # CineGeek 2.0 Beta
 
-![Next.js](https://img.shields.io/badge/Framework-Next.js-black)
-![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
-![TailwindCSS](https://img.shields.io/badge/CSS-Tailwind-38bdf8)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
-![TMDb](https://img.shields.io/badge/Data-TMDb-01b4e4)
-![Vidsrc.to](https://img.shields.io/badge/Streaming-Vidsrc.to-purple)
-![PWA](https://img.shields.io/badge/PWA-Supported-blueviolet)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ed)
+![Docker](https://img.shields.io/badge/Environment-Docker%20Only-2496ed?style=flat-square&logo=docker&logoColor=white)
+![Next.js](https://img.shields.io/badge/Framework-Next.js-black?style=flat-square&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/CSS-Tailwind-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)
+![TMDb](https://img.shields.io/badge/Data-TMDb-01b4e4?style=flat-square&logo=themoviedb&logoColor=white)
 
-> **Developed by Alan Cyril Sunny**  
-> If you find this project helpful, please consider ⭐ [starring the repository](https://github.com/dragonpilee/cinegeek)!
+> **Developed by Alan Cyril Sunny** > If you find this project helpful, please consider ⭐ [starring the repository](https://github.com/dragonpilee/cinegeek)!
 
 ---
 
 ## 🎬 CineGeek 2.0 Beta
 
-A movie and series streaming website.
+A movie and series streaming website.  
+**Note:** This project utilizes a strict containerized architecture. All development, testing, and deployment must be performed via Docker to ensure a consistent environment.
 
 ---
 
 ## ✨ Features
 
-- **Browse Movies**: Explore a vast collection of movies sorted by genre, release date, or popularity.
+- **Browse Movies**: Explore a vast collection sorted by genre, release date, or popularity.
 - **Search Functionality**: Easily find movies by title, director, or cast.
-- **Recommendation Engine**: Get personalized movie recommendations based on your preferences and viewing history.
-- **Responsive Design**: Enjoy a seamless experience across devices with our responsive web design.
+- **Recommendation Engine**: Get personalized movie recommendations based on your preferences.
+- **Responsive Design**: Enjoy a seamless experience across devices.
 - **PWA Support**: Install the app on your device for a native-like experience.
-- **Dockerized**: Easy deployment and consistent development environment with Docker support.
-
-## 📱 Progressive Web App (PWA)
-
-CineGeek is fully installable as a PWA!
-
-- **Installable**: Add to your home screen on mobile and desktop.
-- **Standalone**: Runs in its own window without browser UI.
-- **Navigation**: Custom back button in the video player for seamless navigation.
+- **Containerized**: Zero-dependency setup on the host machine.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- [Next.js](https://nextjs.org/) – framework
-- [TypeScript](https://www.typescriptlang.org/) – language
-- [Tailwind](https://tailwindcss.com/) – CSS
-- [Vercel](https://vercel.com/) – deployments
-- [TMDb](https://www.themoviedb.org/) – movie database
-- [Vidsrc.to](https://vidsrc.to/) – streaming links
+- **Container Engine:** [Docker](https://www.docker.com/)
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Data:** [TMDb](https://www.themoviedb.org/) & [Vidsrc.to](https://vidsrc.to/)
 
 ---
 
-## � Docker Development
+## 🐳 Docker Development Environment
 
-This application is designed to run exclusively with Docker.
+**⚠️ Prerequisites:** You do **not** need Node.js, npm, or Yarn installed on your local machine.  
+The only requirement is **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** (or Docker Engine + Compose).
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/dragonpilee/cinegeek.git
-   cd cinegeek
-   ```
-2. **Create `.env` file**
-   ```bash
-   cp .env.example .env
-   ```
-3. **Build and run the container**
-   ```bash
-   docker-compose up --build
-   ```
-4. **Access the application**
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Quick Start
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/dragonpilee/cinegeek.git](https://github.com/dragonpilee/cinegeek.git)
+    cd cinegeek
+    ```
+
+2.  **Configure Environment**
+    Create the `.env` file for the container to consume.
+    ```bash
+    cp .env.example .env
+    ```
+    *Edit `.env` and add your TMDb API keys.*
+
+3.  **Start the Environment**
+    This command builds the image, installs dependencies inside the container, and starts the server.
+    ```bash
+    docker-compose up --build
+    ```
+
+4.  **Access App**
+    Open [http://localhost:3000](http://localhost:3000)
+
+### Managing the Container
+
+* **Stop the app:** Press `Ctrl+C` or run `docker-compose down`
+* **Rebuild (after adding new packages):** `docker-compose up --build`
+* **View Logs:** `docker-compose logs -f`
+
+---
+
+## 📱 Progressive Web App (PWA)
+
+CineGeek is fully installable as a PWA directly from the Docker instance:
+- **Installable**: Add to your home screen on mobile and desktop.
+- **Standalone**: Runs in its own window without browser UI.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+**Important:** Do not try to run this project via `npm run dev`. All contributions must be compatible with the Docker environment.
 
-1. **Fork the repository**
-2. Create a new branch  
-   ```bash
-   git checkout -b feature/improvement
-   ```
-3. Make your changes.
-4. Commit your changes  
-   ```bash
-   git commit -am 'Add new feature'
-   ```
-5. Push to the branch  
-   ```bash
-   git push origin feature/improvement
-   ```
-6. Create a new Pull Request.
+1.  **Fork the repository**
+2.  Create a new branch (`git checkout -b feature/improvement`)
+3.  **Develop inside Docker:** Ensure your changes reflect correctly at `localhost:3000` via `docker-compose up`.
+4.  Commit your changes (`git commit -am 'Add new feature'`)
+5.  Push to the branch (`git push origin feature/improvement`)
+6.  Create a new Pull Request.
 
 ---
 
