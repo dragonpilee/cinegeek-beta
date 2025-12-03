@@ -28,16 +28,16 @@ export function PwaInstallButton() {
         });
     };
 
+    if (!prompt) return null;
+
     return (
         <Button
             variant="outline"
-            size="icon"
             onClick={onClick}
-            disabled={!prompt}
-            title={prompt ? 'Install App' : 'Install Unavailable'}
+            title="Install App"
         >
-            <Download className="h-[1.2rem] w-[1.2rem]" />
-            <span className="sr-only">Install App</span>
+            <Download className="mr-2 h-4 w-4" />
+            <span>Install App</span>
         </Button>
     );
 }
