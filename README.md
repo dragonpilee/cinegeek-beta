@@ -1,115 +1,78 @@
-# CineGeek 2.0 Beta
+# CineGeek 2.0 Beta 🎬
+> **Containerized Movie & Series Streaming Platform**
 
-![Docker](https://img.shields.io/badge/Environment-Docker%20Only-2496ed?style=flat-square&logo=docker&logoColor=white)
-![Next.js](https://img.shields.io/badge/Framework-Next.js-black?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/CSS-Tailwind-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)
-![TMDb](https://img.shields.io/badge/Data-TMDb-01b4e4?style=flat-square&logo=themoviedb&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Beta-blue?style=for-the-badge) ![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![Next.js](https://img.shields.io/badge/Framework-Next.js-black?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-> **Developed by Alan Cyril Sunny** > If you find this project helpful, please consider ⭐ [starring the repository](https://github.com/dragonpilee/cinegeek)!
-
----
-
-## 🎬 CineGeek 2.0 Beta
-
-A movie and series streaming website.  
-**Note:** This project utilizes a strict containerized architecture. All development, testing, and deployment must be performed via Docker to ensure a consistent environment.
+**CineGeek** is a premium, fully dockerized streaming application that offers a vast library of movies and series. Designed for consistency and ease of deployment, it runs exclusively within a containerized environment, eliminating the need for local Node.js setups.
 
 ---
 
 ## ✨ Features
 
-- **Browse Movies**: Explore a vast collection sorted by genre, release date, or popularity.
-- **Search Functionality**: Easily find movies by title, director, or cast.
-- **Recommendation Engine**: Get personalized movie recommendations based on your preferences.
-- **Responsive Design**: Enjoy a seamless experience across devices.
-- **PWA Support**: Install the app on your device for a native-like experience.
-- **Containerized**: Zero-dependency setup on the host machine.
+- **🎥 Smart Browsing**: Explore collections sorted by genre, release date, or popularity.
+- **🔍 Advanced Search**: Instantly find content by title, director, or cast members.
+- **🧠 Recommendation Engine**: Personalized suggestions tailored to your preferences.
+- **📱 PWA Support**: Installable as a standalone, native-like app on mobile and desktop.
+- **🐳 Pure Docker**: Zero-dependency architecture; runs entirely in containers.
+- **🎨 Responsive UI**: Seamless viewing experience across all screen sizes.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Quick Start
 
-- **Container Engine:** [Docker](https://www.docker.com/)
-- **Framework:** [Next.js](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Data:** [TMDb](https://www.themoviedb.org/) & [Vidsrc.to](https://vidsrc.to/)
+### Prerequisites
 
----
+1.  **Docker Desktop**: Ensure Docker is installed and running.
+2.  **Git**: To clone the repository.
+    * *Note: No Node.js or npm is required on your host machine.*
 
-## 🐳 Docker Development Environment
+### Installation & Run
 
-**⚠️ Prerequisites:** You do **not** need Node.js, npm, or Yarn installed on your local machine.  
-The only requirement is **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** (or Docker Engine + Compose).
-
-### Quick Start
-
-1.  **Clone the repository**
+1.  Clone the repository and navigate to the root:
     ```bash
     git clone [https://github.com/dragonpilee/cinegeek.git](https://github.com/dragonpilee/cinegeek.git)
     cd cinegeek
     ```
 
-2.  **Configure Environment**
-    Create the `.env` file for the container to consume.
+2.  Configure your environment variables:
     ```bash
     cp .env.example .env
+    # Open .env and add your TMDb API keys
     ```
-    *Edit `.env` and add your TMDb API keys.*
 
-3.  **Start the Environment**
-    This command builds the image, installs dependencies inside the container, and starts the server.
+3.  Build and launch the container:
     ```bash
     docker-compose up --build
     ```
 
-4.  **Access App**
-    Open [http://localhost:3000](http://localhost:3000)
-
-### Managing the Container
-
-* **Stop the app:** Press `Ctrl+C` or run `docker-compose down`
-* **Rebuild (after adding new packages):** `docker-compose up --build`
-* **View Logs:** `docker-compose logs -f`
+4.  Open your browser and visit:
+    **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 📱 Progressive Web App (PWA)
+## 🛠️ Technology Stack
 
-CineGeek is fully installable as a PWA directly from the Docker instance:
-- **Installable**: Add to your home screen on mobile and desktop.
-- **Standalone**: Runs in its own window without browser UI.
+| Component | Technology |
+|----------|------------|
+| **Core Framework** | Next.js (React) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Data Sources** | TMDb API, Vidsrc.to |
+| **Infrastructure** | Docker, Docker Compose |
 
 ---
 
 ## 🤝 Contributing
 
-**Important:** Do not try to run this project via `npm run dev`. All contributions must be compatible with the Docker environment.
+**Important:** This project enforces a strict Docker-only workflow.
 
-1.  **Fork the repository**
-2.  Create a new branch (`git checkout -b feature/improvement`)
-3.  **Develop inside Docker:** Ensure your changes reflect correctly at `localhost:3000` via `docker-compose up`.
-4.  Commit your changes (`git commit -am 'Add new feature'`)
-5.  Push to the branch (`git push origin feature/improvement`)
-6.  Create a new Pull Request.
+1.  **Fork & Branch**: Create a new branch for your feature.
+2.  **Develop**: Test all changes inside the container (`docker-compose up`).
+3.  **Commit & Push**: Submit your changes via Pull Request.
 
 ---
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgements
-
-- The Movie Database (TMDb) for providing the movie data through their API.
-- Vidsrc.to for providing the movie streaming links.
-
----
-
-For more information, updates, and documentation, visit the  
-👉 [GitHub Repository](https://github.com/dragonpilee/cinegeek)
-
-Feel free to fork, star ⭐, and contribute!
+<div align="center">
+  <sub>Developed with ❤️ by Alan Cyril Sunny</sub><br>
+  <sub>If you find this project helpful, please consider ⭐ <a href="https://github.com/dragonpilee/cinegeek">starring the repository!</a></sub>
+</div>
