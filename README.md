@@ -6,6 +6,8 @@
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
 ![TMDb](https://img.shields.io/badge/Data-TMDb-01b4e4)
 ![Vidsrc.to](https://img.shields.io/badge/Streaming-Vidsrc.to-purple)
+![PWA](https://img.shields.io/badge/PWA-Supported-blueviolet)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ed)
 
 > **Developed by Alan Cyril Sunny**  
 > If you find this project helpful, please consider ⭐ [starring the repository](https://github.com/dragonpilee/cinegeek)!
@@ -24,6 +26,16 @@ A movie and series streaming website.
 - **Search Functionality**: Easily find movies by title, director, or cast.
 - **Recommendation Engine**: Get personalized movie recommendations based on your preferences and viewing history.
 - **Responsive Design**: Enjoy a seamless experience across devices with our responsive web design.
+- **PWA Support**: Install the app on your device for a native-like experience.
+- **Dockerized**: Easy deployment and consistent development environment with Docker support.
+
+## 📱 Progressive Web App (PWA)
+
+CineGeek is fully installable as a PWA!
+
+- **Installable**: Add to your home screen on mobile and desktop.
+- **Standalone**: Runs in its own window without browser UI.
+- **Navigation**: Custom back button in the video player for seamless navigation.
 
 ---
 
@@ -38,25 +50,25 @@ A movie and series streaming website.
 
 ---
 
-## 💻 Local Development
+## � Docker Development
+
+This application is designed to run exclusively with Docker.
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/dragonpilee/cinegeek.git
    cd cinegeek
    ```
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-3. **Create `.env` file**
+2. **Create `.env` file**
    ```bash
    cp .env.example .env
    ```
-4. **Start the development server**
+3. **Build and run the container**
    ```bash
-   npm run dev
+   docker-compose up --build
    ```
+4. **Access the application**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 

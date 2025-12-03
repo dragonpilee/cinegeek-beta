@@ -25,6 +25,7 @@ import { useSearchStore } from '@/stores/search';
 import { ModeToggle as ThemeToggle } from '@/components/theme-toggle';
 import { DebouncedInput } from '@/components/debounced-input';
 import MovieService from '@/services/MovieService';
+import { PwaInstallButton } from '@/components/pwa-install-button';
 
 interface MainNavProps {
   items?: NavItem[];
@@ -120,8 +121,8 @@ export function MainNav({ items }: MainNavProps) {
   return (
     <nav
       className={cn(
-        'relative flex h-12 w-full items-center justify-between bg-gradient-to-b from-secondary/70 from-10% px-[4vw] transition-colors duration-300 md:sticky md:h-16',
-        isScrolled ? 'bg-secondary shadow-md' : 'bg-transparent',
+        'relative flex h-12 w-full items-center justify-between px-[4vw] transition-all duration-300 md:sticky md:h-16 z-50',
+        isScrolled ? 'glass' : 'bg-gradient-to-b from-black/80 to-transparent',
       )}>
       <div className="flex items-center gap-6 md:gap-10">
         <Link
@@ -160,7 +161,7 @@ export function MainNav({ items }: MainNavProps) {
               <Button
                 variant="ghost"
                 className="flex items-center space-x-2 px-0 hover:bg-transparent focus:ring-0"
-                // className="h-auto px-2 py-1.5 text-base hover:bg-neutral-800 focus:ring-0 dark:hover:bg-neutral-800 lg:hidden"
+              // className="h-auto px-2 py-1.5 text-base hover:bg-neutral-800 focus:ring-0 dark:hover:bg-neutral-800 lg:hidden"
               >
                 <Icons.logo className="h-6 w-6" />
                 <span className="text-base font-bold">Menu</span>
@@ -221,6 +222,7 @@ export function MainNav({ items }: MainNavProps) {
           containerClassName={cn(path === '/' ? 'hidden' : 'flex')}
         />
 
+        <PwaInstallButton />
         <ThemeToggle />
       </div>
     </nav>

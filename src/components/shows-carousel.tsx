@@ -105,7 +105,7 @@ export const ShowCard = ({
 
   return (
     // <picture className="relative aspect-[2/3] md:aspect-video">
-    <picture className="relative aspect-[2/3]">
+    <picture className="relative aspect-[2/3] group overflow-hidden rounded-lg">
       <a
         className="pointer-events-none"
         aria-hidden={false}
@@ -113,30 +113,15 @@ export const ShowCard = ({
         aria-label={getNameFromShow(show)}
         href={`/${show.media_type}/${getSlug(show.id, getNameFromShow(show))}`}
       />
-      {/* <source */}
-      {/*   // srcSet={`https://image.tmdb.org/t/p/w342/${show.poster_path ?? show.backdrop_path}`} */}
-      {/*   srcSet={ */}
-      {/*     show.backdrop_path ?? show.poster_path */}
-      {/*       ? `https://image.tmdb.org/t/p/w500/${ */}
-      {/*           show.backdrop_path ?? show.poster_path */}
-      {/*         }` */}
-      {/*       : '/images/grey-thumbnail.jpg' */}
-      {/*   } */}
-      {/*   media="(min-width: 780px)" */}
-      {/* /> */}
       <img
         src={
           show.poster_path ?? show.backdrop_path
-            ? `https://image.tmdb.org/t/p/w500/${
-                show.poster_path ?? show.backdrop_path
-              }`
+            ? `https://image.tmdb.org/t/p/w500/${show.poster_path ?? show.backdrop_path
+            }`
             : '/images/grey-thumbnail.jpg'
         }
         alt={show.title ?? show.name ?? 'poster'}
-        className="h-full w-full cursor-pointer rounded-lg px-1 transition-all md:hover:scale-110"
-        style={{
-          objectFit: 'cover',
-        }}
+        className="h-full w-full cursor-pointer object-cover transition-all duration-300 group-hover:scale-110"
         onClick={() => {
           const name = getNameFromShow(show);
           const path: string =
@@ -154,6 +139,7 @@ export const ShowCard = ({
         }}
         onError={imageOnErrorHandler}
       />
+      <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20 glass opacity-0 group-hover:opacity-100 pointer-events-none" />
     </picture>
   );
 };

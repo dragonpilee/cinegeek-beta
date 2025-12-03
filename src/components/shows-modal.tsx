@@ -152,7 +152,7 @@ const ShowModal = () => {
       open={modalStore.open}
       onOpenChange={handleCloseModal}
       aria-label="Modal containing show's details">
-      <DialogContent className="w-full overflow-hidden rounded-md bg-zinc-900 p-0 text-left align-middle shadow-xl dark:bg-zinc-900 sm:max-w-3xl lg:max-w-4xl">
+      <DialogContent className="w-full overflow-hidden rounded-md glass p-0 text-left align-middle shadow-xl sm:max-w-3xl lg:max-w-4xl animate-in fade-in zoom-in-95 duration-300">
         <div className="video-wrapper relative aspect-video">
           <Image
             fill
@@ -178,17 +178,16 @@ const ShowModal = () => {
               }
               className="relative aspect-video w-full"
               style={{ width: '100%', height: '100%' }}
-              iframeClassName={`relative pointer-events-none w-[100%] h-[100%] z-[-10] opacity-0`}
+              iframeClassName={`relative pointer-events-none w-[100%] h-[100%] z-0 opacity-0`}
             />
           )}
           <div className="absolute bottom-6 z-20 flex w-full items-center justify-between gap-2 px-10">
             <div className="flex items-center gap-2.5">
               <Link
-                href={`/watch/${
-                  modalStore.show?.media_type === MediaType.MOVIE
-                    ? 'movie'
-                    : 'tv'
-                }/${modalStore.show?.id}`}>
+                href={`/watch/${modalStore.show?.media_type === MediaType.MOVIE
+                  ? 'movie'
+                  : 'tv'
+                  }/${modalStore.show?.id}`}>
                 <Button
                   aria-label={`${isPlaying ? 'Pause' : 'Play'} show`}
                   className="group h-auto rounded py-1.5">

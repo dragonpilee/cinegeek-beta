@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_CLIENTVAR: "clientvar"
+    restart: always
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    dns:
+      - 8.8.8.8
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1400

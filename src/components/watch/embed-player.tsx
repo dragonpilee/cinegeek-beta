@@ -5,7 +5,13 @@ interface EmbedPlayerProps {
   url: string;
 }
 
+import { ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+
 function EmbedPlayer(props: EmbedPlayerProps) {
+  const router = useRouter();
+
   React.useEffect(() => {
     if (ref.current) {
       ref.current.src = props.url;
@@ -36,6 +42,15 @@ function EmbedPlayer(props: EmbedPlayerProps) {
         position: 'absolute',
         backgroundColor: '#000',
       }}>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="absolute left-4 top-20 z-50 text-white hover:bg-black/50 hover:text-white"
+        onClick={() => router.back()}
+      >
+        <ArrowLeft className="h-6 w-6" />
+        <span className="sr-only">Back</span>
+      </Button>
       <iframe
         ref={ref}
         width="100%"
