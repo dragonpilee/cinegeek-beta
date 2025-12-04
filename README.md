@@ -57,7 +57,7 @@
 | **Core Framework** | Next.js (React) |
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS |
-| **Data Sources** | TMDb API, Vidsrc.to |
+| **Data Sources** | TMDb API, Vidsrc |
 | **Infrastructure** | Docker, Docker Compose |
 
 ---
